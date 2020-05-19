@@ -1,0 +1,23 @@
+server:
+  port: 8880
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useUnicode=true&useAffectedRows=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+  jpa:
+    #database-platform: org.hibernate.dialect.My5SQL5Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+#    properties:
+#      hibernate.dialect: org.hibernate.dialect.My5SQL5Dialect
+
+
+logging:
+  level:
+    root: info

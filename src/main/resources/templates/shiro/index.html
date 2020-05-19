@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+</head>
+<body>
+<span shiro:authenticated="false">
+    <span>欢迎您：<span th:text="${session.user.username}"></span></span>
+</span>
+<shiro:hasRole name="usermanager">
+    系统管理员
+</shiro:hasRole>
+
+<shiro:hasPermission name="user:add">
+    有增加权限
+</shiro:hasPermission>
+
+<shiro:hasPermission name="user:update">
+    有修改权限
+</shiro:hasPermission>
+</body>
+</html>
